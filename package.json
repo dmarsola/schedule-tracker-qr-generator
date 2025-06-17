@@ -1,0 +1,33 @@
+{
+  "name": "teacheraid",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "bootstrap": "^5.3.6",
+    "next": "15.3.3",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-qr-code": "^2.0.16",
+    "sass": "^1.89.2"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/bootstrap": "^5.2.10",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5"
+  }
+}
