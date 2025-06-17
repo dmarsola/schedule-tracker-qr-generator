@@ -42,3 +42,13 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.p-orderlist-item {
+  // primereact override
+  padding: 0.5em;
+}
+
+.pointer-auto {
+  // make sure the pointer is not supressed
+  pointer-events: auto !important;
+}

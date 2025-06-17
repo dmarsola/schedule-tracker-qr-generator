@@ -62,8 +62,25 @@ export default function ScheduleManager() {
         <strong>{item.icon}</strong> {item.activity} at {item.time?.toLocaleTimeString() ?? '--'} ({item.frequency})
       </div>
       <div>
-        <Button icon="pi pi-pencil" text onClick={() => handleEdit(item)} />
-        <Button icon="pi pi-trash" text severity="danger" onClick={() => handleDelete(item.id)} />
+        <Button
+          text
+          onClick={(e) => {
+            handleEdit({ ...item })
+          }}
+          className="p-1 m-auto"
+        >
+          <i className="pi pi-pencil m-auto pointer-auto" />
+        </Button>
+        <Button
+          text
+          severity="danger"
+          onClick={(e) => {
+            handleDelete(item.id)
+          }}
+          className="p-1"
+        >
+          <i className="pi pi-trash m-auto pointer-auto" />
+        </Button>
       </div>
     </div>
   )
@@ -74,9 +91,9 @@ export default function ScheduleManager() {
       <div className="row g-3 mb-3">
         <div className="col-md-4">
           <label className="form-label">Schedule</label>
-          <InputText value={form.activity} onChange={(e) => setForm({ ...form, activity: e.target.value })} className="form-control" />
+          <InputText className="w-100" value={form.activity} onChange={(e) => setForm({ ...form, activity: e.target.value })} />
         </div>
-        <div className="col-md-4">
+        <div className="col-md-2">
           <label className="form-label">Icon</label>
           <Dropdown
             value={form.icon}
@@ -87,7 +104,7 @@ export default function ScheduleManager() {
             showClear
           />
         </div>
-        <div className="col-md-4">
+        <div className="col-md-2">
           <label className="form-label">Time</label>
           <Calendar
             value={form.time}
@@ -98,7 +115,7 @@ export default function ScheduleManager() {
             className="w-100"
           />
         </div>
-        <div className="col-md-4">
+        <div className="col-md-2">
           <label className="form-label">Frequency</label>
           <Dropdown
             value={form.frequency}
@@ -118,12 +135,12 @@ export default function ScheduleManager() {
       <OrderList
         dataKey="id"
         value={entries}
-        onChange={(e) => setEntries(e.value)}
+        onChange={(e) => setEntries([...e.value])}
         itemTemplate={itemTemplate}
         header="Your Activities (drag to reorder)"
         dragdrop
         listStyle={{ height: 'auto' }}
-        className="mb-5"
+        className="mb-1"
       />
     </div>
   )
