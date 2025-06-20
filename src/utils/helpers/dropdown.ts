@@ -10,7 +10,7 @@ export interface DropdownData {
 export const getDropdownValue = (obj: { [key: string]: string }): DropdownData[] => {
   const result: DropdownData[] = []
   for (const key in obj) {
-    result.push({ name: obj[key], value: key })
+    result.push({ name: key, value: obj[key] })
   }
   return result
 }
